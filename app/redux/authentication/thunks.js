@@ -15,18 +15,6 @@ export const attemptLogin = credentials => {
   };
 };
 
-// export const attemptSignUp = credentials => {
-//   return dispatch => {
-//     axios
-//       .post('/auth/signup', credentials)
-//       .then(res => dispatch(signUp(res.data)))
-//       .catch(e => {
-//         dispatch(logout());
-//         checkError(dispatch, e.response.status);
-//       });
-//   };
-// };
-
 export const attemptLogout = id => {
   return dispatch => {
     axios
