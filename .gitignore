@@ -1,0 +1,14 @@
+node_modules
+.vscode
+.npmrc
+
+#bundles
+public/bundle.js
+public/bundle.js.map
+
+#Ignoring the web scraping and ML outputs, since they're huge
+postsByTitle.json
+whitelist.txt
+
+#Secrets
+.env
