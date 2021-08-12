@@ -4,14 +4,13 @@ import { setCurrentConversation, setAllConversations } from './actions.js';
 
 import { checkError, checkSuccess } from '../statusMessage/utils.js';
 
-//--------
 //CURRENT VIEW CONVERSATION THUNKS
 
 //Fetch a single conversation by Id, set it as the current view
 export const fetchCurrentConversation = conversationId => {
   return dispatch => {
     return axios
-      .get(`/api/conversation/${conversationId}`)
+      .get(`/api/conversation/${ conversationId }`)
       .then(res => dispatch(setCurrentConversation(res.data)))
       .catch(e => checkError(dispatch, e.response.status));
   };
@@ -22,9 +21,7 @@ export const createConversation = (content, token) => {
   return dispatch => {
     return axios
       .post(`/api/conversation`, content, {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
+        headers: { 'Authorization': `Bearer ${token}` }
       })
       .then(res => dispatch(setCurrentConversation(res.data)))
       .catch(e => checkError(dispatch, e.response.status));
@@ -36,9 +33,7 @@ export const updateConversation = (conversationId, content, token) => {
   return dispatch => {
     return axios
       .put(`/api/conversation/${conversationId}`, content, {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
+        headers: { 'Authorization': `Bearer ${token}` }
       })
       .then(res => {
         dispatch(setCurrentConversation(res.data));
@@ -53,11 +48,8 @@ export const updateConversation = (conversationId, content, token) => {
 export const deleteConversation = (conversationId, token) => {
   return dispatch => {
     return axios
-      .delete(`/api/conversation/${conversationId}`,
-      {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
+      .delete(`/api/conversation/${conversationId}`, {
+        headers: { 'Authorization': `Bearer ${token}` }
       })
       .then(res => {
         dispatch(setCurrentConversation());
@@ -75,7 +67,7 @@ export const deleteConversation = (conversationId, token) => {
 export const fetchAllConversations = (page = 0) => {
   return dispatch => {
     return axios
-      .get(`/api/conversation?page=${page}`)
+      .get(`/api/conversation?page=${ page }`)
       .then(res => dispatch(setAllConversations(res.data)))
       .catch(e => checkError(dispatch, e.response.status));
   };
@@ -85,7 +77,7 @@ export const fetchAllConversations = (page = 0) => {
 export const filterConversations = tag => {
   return dispatch => {
     return axios
-      .get(`/api/tag/${tag}`)
+      .get(`/api/tag/${ tag }`)
       .then(res => dispatch(setAllConversations(res.data.conversations)))
       .catch(e => checkError(dispatch, e.response.status));
   };

@@ -1,1 +1,1 @@
-export default Symbol('STATUS_MESSAGE');
+export const SET_STATUS_MESSAGE = Symbol('SET_STATUS_MESSAGE');

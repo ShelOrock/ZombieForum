@@ -1,8 +1,6 @@
-import STATUS_MESSAGE from './constants.js';
+import { SET_STATUS_MESSAGE } from './constants.js';
 
-export default statusMessage => {
-  return {
-    type: STATUS_MESSAGE,
-    statusMessage,
-  };
-};
+export default statusMessage => ({
+  type: SET_STATUS_MESSAGE,
+  statusMessage,
+})

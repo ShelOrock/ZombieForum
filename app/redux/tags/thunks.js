@@ -7,9 +7,11 @@ export const fetchTags = () => {
   return dispatch => {
     return axios
       .get('/api/tag')
-      .then(response => dispatch(setTags(response.data)))
-      .then(() => dispatch(setWhitelist()))
-      .then(() => dispatch(setActive()))
+      .then(response => {
+        dispatch(setTags(response.data));
+        dispatch(setWhitelist());
+        dispatch(setActive());
+      })
       .catch(e => checkError(dispatch, e.response.status));
   };
 };

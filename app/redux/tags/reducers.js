@@ -1,15 +1,20 @@
-import { SET_TAGS, SET_WHITELIST, SET_ACTIVE } from './constants.js';
+import {
+  SET_TAGS,
+  SET_WHITELIST,
+  SET_ACTIVE
+} from './constants.js';
 
-const initState = {
+const initialState = {
   all: [],
   active: [],
   whitelist: {}
 }
 
-export const tags = (state=initState, action) => {
+export const tags = (state = initialState, action) => {
   switch (action.type) {
     case SET_TAGS:
       return { ...state, all: action.tags };
+
     case SET_WHITELIST:
       return {
         ...state,
@@ -18,6 +23,7 @@ export const tags = (state=initState, action) => {
           return accum;
         }, {})
       };
+
     case SET_ACTIVE:
       return {
         ...state,
@@ -27,9 +33,11 @@ export const tags = (state=initState, action) => {
           }
           return accum;
         }, [])
-      }
+      };
+
     default:
       return state;
+      
   }
 };
 

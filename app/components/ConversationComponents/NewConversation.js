@@ -155,7 +155,6 @@ class NewConversation extends Component {
 
     return (
       <MainContainer>
-        {/* <Link to="postpage">Post Page</Link> */}
         <Form.Container>
           <Font.h1>New Conversation</Font.h1>
           <Font.h4>Topic</Font.h4>

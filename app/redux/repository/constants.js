@@ -1,1 +1,1 @@
-export const SET_ALL_REPOS = 'SET_ALL_REPOS';
+export const SET_ALL_REPOS = Symbol('SET_ALL_REPOS');

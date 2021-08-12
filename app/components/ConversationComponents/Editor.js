@@ -79,24 +79,7 @@ const modules = {
   syntax: {
     highlight: text => hljs.highlight(text).value,
   },
-  // keyboard: {
-  //   bindings: {
-  //     enter: {
-  //       key: 13,
-  //       handler: function(val1, val2) {
-  //         let previous = this.quill.getSelection();
-  //         if(this.quill.getFormat().html || this.quill.getFormat().css || this.quill.getFormat().js) {
-  //           let format = Object.keys(this.quill.getFormat())[0]
-  //           this.quill.insertText(previous, '\n');
-  //           this.quill.format(format, true);
-  //         } else {
-  //           this.quill.insertText(previous, '\n');
-  //         }
 
-  //       }
-  //     }
-  //   }
-  // },
   toolbar: {
     container: '#toolbar',
     handlers: {

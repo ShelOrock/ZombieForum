@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { fetchTags } from '../redux/tags/thunks.js';
 
-const Classifier = (props) => {
+const Classifier = () => {
     const [keyIdx, setKeyIdx] = useState(0);
     const [done, setDone] = useState(false);
     const [data, setData] = useState({});
@@ -21,17 +21,10 @@ const Classifier = (props) => {
     }
 
     const handleSubmit = async() => {
-        //post to /api/ml with trainingSet
-        await axios.post('/api/ml', { classified: allData });
+      await axios.post('/api/ml', { classified: allData });
     }
 
     const handleNext = () => {
-
-        // {
-        //     1: ['big str', ['val1', 'val2']],
-        //     2: ...
-        // }
-
         const docArr = [data[Object.keys(data)[keyIdx]][0]];
         docArr.push(outputArr);
         const updatedData = {...allData};
@@ -42,9 +35,6 @@ const Classifier = (props) => {
     }
 
     useEffect(() => {
-        console.log('current output values', outputArr);
-        console.log('trainingSet', allData);
-
         if (keyIdx > 0 && keyIdx >= Object.keys(data).length) {
             setDone(true);
         }

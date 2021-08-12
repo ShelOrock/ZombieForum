@@ -5,7 +5,7 @@ import store from './store.js';
 import Root from './components/Root.js';
 
 render(
-  <Provider store={store}>
+  <Provider store={ store }>
     <Root />
   </Provider>,
   document.getElementById('main')

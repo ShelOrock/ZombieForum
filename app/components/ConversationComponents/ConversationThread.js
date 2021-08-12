@@ -21,7 +21,6 @@ const ConversationThread = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isReadOnly, setIsReadOnly] = useState(true);
   const [replyCount, setReplyCount] = useState();
-  const replies = useSelector(state => state.replies);
   const conversation = useSelector(state => state.conversation);
   const user = useSelector(state => state.user);
   const body = useSelector(state => state.body)

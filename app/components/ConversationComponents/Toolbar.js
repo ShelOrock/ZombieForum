@@ -2,7 +2,6 @@ import React from 'react';
 import 'react-quill/dist/quill.snow.css';
 
 import Toolbar from '../styled/Toolbar.js';
-import { Row } from '../styled/Div.js';
 import { Option, Dropdown, SmallDropdown } from '../styled/Input.js';
 import * as Button from '../styled/Button.js';
 

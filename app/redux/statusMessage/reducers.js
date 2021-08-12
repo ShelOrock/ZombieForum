@@ -1,8 +1,13 @@
-import STATUS_MESSAGE from './constants.js';
+import { SET_STATUS_MESSAGE } from './constants.js';
 
-export default (state = { status: null, message: '' }, action) => {
+const initialState = {
+  status: null,
+  message: ''
+}
+
+export const statusMessage = (state = initialState, action) => {
   switch (action.type) {
-    case STATUS_MESSAGE:
+    case SET_STATUS_MESSAGE:
       return action.statusMessage;
 
     default:
